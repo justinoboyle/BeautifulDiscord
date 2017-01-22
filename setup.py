@@ -12,7 +12,7 @@ setup(
     name='MyDiscord',
     author='justinoboyle',
     url='https://github.com/justinoboyle/MyDiscord',
-    version='0.6.1',
+    version='0.7.1',
     license='MIT',
     description='Adds custom CSS and JavaScript support to Discord. (Fork of BeautifulDiscord)',
     long_description=readme,

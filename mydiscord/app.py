@@ -152,20 +152,22 @@ def main():
             if not os.path.exists(args.js):
                 with open(args.js, 'w') as f:
                     f.write(textwrap.dedent("""\
-                /*
-                * Hold Up!
-                * If someone told you to copy/paste something here you have an 11/10 chance you're being scammed.
-                * Pasting anything in here could give attackers access to your Discord account.
-                * Unless you understand exactly what you are doing, close this document and stay safe.
-                */
+                    /*
+                    * Hold Up!
+                    * Pasting anything in here could give attackers access to your Discord account.
+                    * Unless you understand exactly what you are doing, close this document and stay safe.
+                    */
 
-                // Make this array empty to not load the core plugin. (If you delete it, it will still load it.) –– I don't recommend removing this as it will remove all GUI functionality!
-                global.plugins = [ 'https://raw.githubusercontent.com/justinoboyle/mydiscord/master/core.js' ];
+                    // Make this array empty to not load the core plugin. (If you delete it, it will still load it.) I don't recommend removing this as it will remove all GUI functionality!
+                    global.plugins = [ 'https://raw.githubusercontent.com/justinoboyle/mydiscord/master/core.js' ];
 
-                // To load more plugins (below) -- don't recreate the array! **use global.loadPlugin(link)**
+                    if(global.config.plugins)
+                        for(let plugin of global.config.plugins)
+                            global.loadPlugin(plugin);
 
-                // Example: global.loadPlugin('https://example.com/plugin.js')
+                    // To load more plugins (below) -- don't recreate the array! **use global.loadPlugin(link)**
 
+                    // You probably don't actually need to touch this file if you're using the proper plugin installation system through core.js
                     """))
 
             css_injection_script = textwrap.dedent("""\
