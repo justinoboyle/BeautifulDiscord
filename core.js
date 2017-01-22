@@ -64,5 +64,5 @@ setInterval(() => {
         return;
     const parent = document.getElementsByClassName('change-log-button-container')[0];
     if (!parent.innerHTML.includes('MyDiscord'))
-        parent.innerHTML = `<a class="change-log-button" onclick="global.openWelcomeModal()">MyDiscord</a>` + parent.innerHTML;
+        parent.innerHTML  += `<a class="change-log-button" onclick="global.openWelcomeModal()">MyDiscord</a>`;
 }, 500); 
