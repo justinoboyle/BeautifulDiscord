@@ -21,7 +21,7 @@ The script works by scanning the active processes and looking for the Discord on
 (yes, this also means you can fool the program into trying to apply this to some random program named Discord)
 
 ```
-$ yourdiscord --css ~/discord.css --js ~/discord.js
+$ mydiscord --css ~/discord.css --js ~/discord.js
 Found Discord Canary under /Applications/Discord Canary.app/Contents/MacOS
 
 Done!
@@ -42,14 +42,14 @@ and rename `original_app.asar` to `app.asar`. You can also do this manually if y
 install gets screwed up.
 
 ```
-$ yourdiscord --revert
+$ mydiscord --revert
 Found Discord Canary under /Applications/Discord Canary.app/Contents/MacOS
 
 Reverted changes, no more CSS hot-reload :(
 $
 ```
 
-You can also run it as a package - i.e. `python3 -m yourdiscord` - if somehow you cannot
+You can also run it as a package - i.e. `python3 -m mydiscord` - if somehow you cannot
 install it as a script that you can run from anywhere.
 
 ## Installing

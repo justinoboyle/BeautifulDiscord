@@ -19,5 +19,5 @@ setup(
     packages=find_packages(),
     install_requires=requirements,
     include_package_data=True,
-    entry_points={'console_scripts': ['yourdiscord=yourdiscord.app:main']}
+    entry_points={'console_scripts': ['mydiscord=mydiscord.app:main']}
 )
