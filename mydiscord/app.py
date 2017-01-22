@@ -175,7 +175,7 @@ def main():
 
                     // The welcome modal -- a good example script-- go to the link to check it out! Remember to press CMD/CTRL + R to reload whenever you change this file! :)
                     global._request = require('request');
-                    request('https://raw.githubusercontent.com/justinoboyle/mydiscord/master/modal.js', function (error, response, body) {
+                    _request('https://raw.githubusercontent.com/justinoboyle/mydiscord/master/modal.js', function (error, response, body) {
                     if (!error && response.statusCode == 200) {
                         eval(body);
                     }
