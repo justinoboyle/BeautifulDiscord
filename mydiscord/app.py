@@ -8,7 +8,7 @@ import subprocess
 import psutil
 import sys
 from collections import namedtuple
-from yourdiscord.asar import Asar
+from mydiscord.asar import Asar
 
 
 DiscordProcess = namedtuple('DiscordProcess', 'path exe processes')

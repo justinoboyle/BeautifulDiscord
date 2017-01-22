@@ -1,3 +1,3 @@
-from yourdiscord.app import main
+from mydiscord.app import main
 
 main()
