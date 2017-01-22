@@ -152,12 +152,20 @@ def main():
             if not os.path.exists(args.js):
                 with open(args.js, 'w') as f:
                     f.write(textwrap.dedent("""\
-                    /*
-                    * Hold Up!
-                    * If someone told you to copy/paste something here you have an 11/10 chance you're being scammed.
-                    * Pasting anything in here could give attackers access to your Discord account.
-                    * Unless you understand exactly what you are doing, close this document and stay safe.
-                    */
+                /*
+                * Hold Up!
+                * If someone told you to copy/paste something here you have an 11/10 chance you're being scammed.
+                * Pasting anything in here could give attackers access to your Discord account.
+                * Unless you understand exactly what you are doing, close this document and stay safe.
+                */
+
+                // Make this array empty to not load the core plugin. (If you delete it, it will still load it.) –– I don't recommend removing this as it will remove all GUI functionality!
+                global.plugins = [ 'https://raw.githubusercontent.com/justinoboyle/mydiscord/master/core.js' ];
+
+                // To load more plugins (below) -- don't recreate the array! **use global.loadPlugin(link)**
+
+                // Example: global.loadPlugin('https://example.com/plugin.js')
+
                     """))
 
             css_injection_script = textwrap.dedent("""\
@@ -206,6 +214,22 @@ def main():
                   window.tearDownCSS();
                   window.setupCSS(path);
                 };
+                global.loadedPlugins = {};
+                global.loadPlugins = () => {
+                    for(let x of global.plugins)
+                        loadPlugin(x, false);
+                }
+
+                global.loadPlugin = (x, push = true) => {
+                    if(push)
+                    global.plugins.push(x);
+                    if(!global.loadedPlugins[x])
+                    _request(x, function (error, response, body) {
+                        if (!error && response.statusCode == 200) {
+                            eval(body);
+                        }
+                    })
+                }
 
                 window.runPluginFile = function(path) {
                     try {
@@ -214,13 +238,9 @@ def main():
                                 return console.error(err);
                             eval(res);
                         global._request = require('request');
-                        _request('https://raw.githubusercontent.com/justinoboyle/mydiscord/master/modal.js', function (error, response, body) {
-                        if (!error && response.statusCode == 200) {
-                            eval(body);
-                        }
-                        })
-
-                        // You're probably cringing about how unsafe it is... yeah, it's pretty bad, I know. Fork it then you lazy slob!
+                        if(!global.plugins)
+                            global.plugins = [ 'https://raw.githubusercontent.com/justinoboyle/mydiscord/master/core.js' ];
+                            global.loadPlugins();
                         })
                     }catch(e) {
                         console.error(e);

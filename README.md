@@ -9,6 +9,10 @@ I quite liked [leovoel's BeautifulDiscord](https://github.com/leovoel/BeautifulD
 
 Because this is a fork, most of the code (and the usage section) was written by [leovoel](https://github.com/leovoel), so go show him some love.
 
+## Disclaimer
+
+I am not responsible for anything stupid you do with this. Use common sense.
+
 ## Usage
 
 Just invoke the script when installed. If you don't pass the `--css` and `--js` flags, the resources
