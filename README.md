@@ -15,6 +15,30 @@ I am not responsible for anything stupid you do with this. Use common sense.
 
 ## Usage
 
+* Install python 3+
+
+* Open the command line (cmd.exe on Windows, Terminal on macOS/*nix)
+
+* Open Discord
+
+* Run the following commands:
+
+```
+python3 -m pip install -U https://github.com/justinoboyle/MyDiscord/archive/master.zip
+mydiscord --css discord.css --js discord.js
+```
+
+(If that fails, then run this):
+
+```
+python -m pip install -U https://github.com/justinoboyle/MyDiscord/archive/master.zip
+mydiscord --css discord.css --js discord.js
+```
+
+* Have fun!
+
+## More detailed command line usage
+
 Just invoke the script when installed. If you don't pass the `--css` and `--js` flags, the resources
 will be placed wherever the Discord app resources are found, which is not a very convenient
 location.
@@ -55,14 +79,6 @@ $
 
 You can also run it as a package - i.e. `python3 -m mydiscord` - if somehow you cannot
 install it as a script that you can run from anywhere.
-
-## Installing
-
-```
-python3 -m pip install -U https://github.com/justinoboyle/MyDiscord/archive/master.zip
-```
-
-Usage of a virtual environment is recommended, to not pollute your global package space.
 
 ## Requirements
 
