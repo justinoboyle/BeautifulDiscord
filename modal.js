@@ -32,7 +32,7 @@ global.openWelcomeModal = () => {
 `;
     document.getElementById('boot-modal').style = '';
 }
-if(typeof(global.config.showsOnBoot) === "undefined") {
+if (typeof (global.config.showsOnBoot) === "undefined") {
     global.config.showsOnBoot = true;
     saveConfig();
 }
@@ -63,6 +63,12 @@ setInterval(() => {
     if (document.getElementsByClassName('tab-bar').length == 0)
         return;
     const parent = document.getElementsByClassName('tab-bar')[0];
-    if (!parent.innerHTML.includes('MyDiscord'))
-        parent.innerHTML += `<div onclick="global.openWelcomeModal()" class="tab-bar-item">MyDiscord</div>`;
+
+    if (!parent.innerHTML.includes('MyDiscord')) {
+        let temp = document.createElement('div');
+        temp.idonclick = 'global.openWelcomeModal()';
+        tempc.class = "tab-bar-item";
+        temp.innerHTML = "MyDiscord"
+        parent.insertBefore(document.getElementsByClassName('change-log-button-container'), temp)
+    }
 }, 1000);
