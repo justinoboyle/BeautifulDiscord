@@ -60,15 +60,9 @@ global.openTextFile = (filePath) => {
 }
 
 setInterval(() => {
-    if (document.getElementsByClassName('tab-bar').length == 0)
+    if (document.getElementsByClassName('change-log-button-container').length == 0)
         return;
-    const parent = document.getElementsByClassName('tab-bar')[0];
-
-    if (!parent.innerHTML.includes('MyDiscord')) {
-        let temp = document.createElement('div');
-        temp.idonclick = 'global.openWelcomeModal()';
-        tempc.class = "tab-bar-item";
-        temp.innerHTML = "MyDiscord"
-        parent.insertBefore(document.getElementsByClassName('change-log-button-container'), temp)
-    }
-}, 1000);
+    const parent = document.getElementsByClassName('change-log-button-container')[0];
+    if (!parent.innerHTML.includes('MyDiscord'))
+        parent.innerHTML = `<a class="change-log-button" onclick="global.openWelcomeModal()">MyDiscord</a>` + parent.innerHTML;
+}, 500); 

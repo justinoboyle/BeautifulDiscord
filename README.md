@@ -17,7 +17,7 @@ I am not responsible for anything stupid you do with this. Use common sense.
 
 * Install python 3+
 
-* Open the command line (cmd.exe on Windows, Terminal on macOS/*nix)
+* Open the command line - (cmd.exe AS ADMIN on Windows, Terminal on macOS/*nix)
 
 * Open Discord
 
@@ -25,14 +25,14 @@ I am not responsible for anything stupid you do with this. Use common sense.
 
 ```
 python3 -m pip install -U https://github.com/justinoboyle/MyDiscord/archive/master.zip
-mydiscord --css discord.css --js discord.js
+mydiscord
 ```
 
 (If that fails, then run this):
 
 ```
 python -m pip install -U https://github.com/justinoboyle/MyDiscord/archive/master.zip
-mydiscord --css discord.css --js discord.js
+mydiscord
 ```
 
 * Have fun!
