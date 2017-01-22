@@ -186,8 +186,8 @@ def main():
                     <div class="callout-backdrop" style="opacity: 0.85; background-color: rgb(0, 0, 0); transform: translateZ(0px);"></div>
                     <div class="modal" style="opacity: 1; transform: scale(1) translateZ(0px);">
                         <div class="modal-inner">
-                            <form class="form">
-                                <div class="form-header">
+                            <form class="form" style="background: #212121">
+                                <div class="form-header" style="background: #252525">
                                 <header>MyDiscord has been installed.</header>
                                 </div>
                                 <div class="form-inner">
@@ -198,7 +198,7 @@ def main():
                                     Anyway, enjoy MyDiscord!
                                     </div>
                                 </div>
-                                <div class="form-actions">
+                                <div class="form-actions" style="background: #252525">
                                     <a href="#" style="text-decoration:none;" class="btn btn-default" onclick="setTimeout(() => { global.toggleShowsOnBoot(); document.getElementById('boot-modal').style='display:none;' }, 1);">${(global.config.showsOnBoot) ? "Don't show on boot" : "Show on boot"}</a>
                                     <a href="#" style="text-decoration:none;" class="btn btn-primary" onclick="setTimeout(() => document.getElementById('boot-modal').style='display:none;', 1);">Gotcha</a>
                                 </div>
