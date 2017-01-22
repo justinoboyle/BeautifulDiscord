@@ -62,7 +62,7 @@ global.openTextFile = (filePath) => {
 setInterval(() => {
     if (document.getElementsByClassName('tab-bar').length == 0)
         return;
-    const parent = document.getElementsByClassName('change-log-button-container')[0];
+    const parent = document.getElementsByClassName('tab-bar')[0];
     if (!parent.innerHTML.includes('MyDiscord'))
         parent.innerHTML += `<div onclick="global.openWelcomeModal()" class="tab-bar-item">MyDiscord</div>`;
 }, 1000);
