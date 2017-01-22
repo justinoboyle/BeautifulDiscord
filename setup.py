@@ -9,15 +9,15 @@ with open('README.md') as f:
 
 
 setup(
-    name='BeautifulDiscord',
-    author='leovoel',
-    url='https://github.com/leovoel/BeautifulDiscord',
+    name='YourDiscord',
+    author='justinoboyle',
+    url='https://github.com/justinoboyle/YourDiscord',
     version='0.1.0',
     license='MIT',
-    description='Adds custom CSS support to Discord.',
+    description='Adds custom CSS and JavaScript support to Discord. (Fork of BeautifulDiscord)',
     long_description=readme,
     packages=find_packages(),
     install_requires=requirements,
     include_package_data=True,
-    entry_points={'console_scripts': ['beautifuldiscord=beautifuldiscord.app:main']}
+    entry_points={'console_scripts': ['yourdiscord=yourdiscord.app:main']}
 )

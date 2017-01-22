@@ -1,25 +1,17 @@
-BeautifulDiscord
+YourDiscord
 ================
 
-Simple Python script that adds CSS hot-reload to Discord.
+Simple Python script that adds CSS hot-reload and Custom JavaScript support to Discord.
 
-![demo gif](http://i.imgur.com/xq4HS5f.gif)
+## Credit where it's due
 
-## Motivation
+I quite liked [leovoel's BeautifulDiscord](https://github.com/leovoel/BeautifulDiscord)'s lightweight implementation of stylesheets in Discord, so I modified leovoel's script to also include JavaScript support.
 
-I wanted custom CSS injection for Discord, with no JavaScript add-ons or anything.
-That's BeautifulDiscord.
-
-If you want JS, you can either:
-- Use [BetterDiscord](https://github.com/Jiiks/BetterDiscordApp)
-- Make your own thing!
-
-You could also fork this repo and add it, it's not that big of a stretch.
-I just didn't add it because it's not what I want to do here.
+Because this is a fork, most of the code (and the usage section) was written by [leovoel](https://github.com/leovoel), so go show him some love.
 
 ## Usage
 
-Just invoke the script when installed. If you don't pass the `--css` flag, the stylesheet
+Just invoke the script when installed. If you don't pass the `--css` and `--js` flags, the resources
 will be placed wherever the Discord app resources are found, which is not a very convenient
 location.
 
@@ -29,15 +21,17 @@ The script works by scanning the active processes and looking for the Discord on
 (yes, this also means you can fool the program into trying to apply this to some random program named Discord)
 
 ```
-$ beautifuldiscord --css C:\mystuff\myown.css
-0: Found DiscordPTB.exe
-1: Found DiscordCanary.exe
-Discord executable to use (number): 1
+$ yourdiscord --css ~/discord.css --js ~/discord.js
+Found Discord Canary under /Applications/Discord Canary.app/Contents/MacOS
 
 Done!
 
-You may now edit your C:\mystuff\myown.css file,
+You may now edit your CSS in /Users/justin/discord.css,
 which will be reloaded whenever it's saved.
+You can also edit your JavaScript in /Users/justin/discord.js
+,but you must reload (CMD/CTRL + R) Discord to re-run it
+
+*Do not insert code that you do not understand, as it could steal your account!*
 
 Relaunching Discord now...
 $
@@ -48,21 +42,20 @@ and rename `original_app.asar` to `app.asar`. You can also do this manually if y
 install gets screwed up.
 
 ```
-$ beautifuldiscord --revert
-0: Found DiscordPTB.exe
-1: Found DiscordCanary.exe
-Discord executable to use (number): 1
+$ yourdiscord --revert
+Found Discord Canary under /Applications/Discord Canary.app/Contents/MacOS
+
 Reverted changes, no more CSS hot-reload :(
 $
 ```
 
-You can also run it as a package - i.e. `python3 -m beautifuldiscord` - if somehow you cannot
+You can also run it as a package - i.e. `python3 -m yourdiscord` - if somehow you cannot
 install it as a script that you can run from anywhere.
 
 ## Installing
 
 ```
-python3 -m pip install -U https://github.com/leovoel/BeautifulDiscord/archive/master.zip
+python3 -m pip install -U https://github.com/justinoboyle/YourDiscord/archive/master.zip
 ```
 
 Usage of a virtual environment is recommended, to not pollute your global package space.
@@ -76,12 +69,8 @@ Normally, `pip` should install any required dependencies.
 
 ## Themes
 
-Some people have started a theming community over here:
+Some people have started a theming community for the original BeautifulDiscord over here:
 https://github.com/beautiful-discord-community/resources/
 
 They have a Discord server as well:
 https://discord.gg/EDwd5wr
-
-## More GIFs
-
-![demo gif](http://i.imgur.com/w0bQOJ6.gif)
