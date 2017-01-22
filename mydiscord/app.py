@@ -174,6 +174,7 @@ def main():
                 window._fs = require("fs");
                 window._fileWatcher = null;
                 window._styleTag = null;
+                window._request = require('request');
 
                 global.config = {};
 
