@@ -188,14 +188,14 @@ def main():
                         <div class="modal-inner">
                             <form class="form">
                                 <div class="form-header">
-                                <header>YourDiscord has been installed.</header>
+                                <header>MyDiscord has been installed.</header>
                                 </div>
                                 <div class="form-inner">
                                 <div class="help-text" style="color: white">
-                                    YourDiscord has just been installed, congrats!<br /><br />
+                                    MyDiscord has just been installed, congrats!<br /><br />
                                     You can <a style="text-decoration:none;color:#697ec4" href="#" onclick="global.openTextFile(global.cssFile)">edit your styles</a> (which hot-reload, awesome!), <br /><br />
                                     Or <a style="text-decoration:none;color:#697ec4" href="#" onclick="global.openTextFile(global.pluginFile)">edit your scripts</a> (<strong>Do not enter code that you don't understand... seriously!</strong>) <br /><br />
-                                    Anyway, enjoy YourDiscord!
+                                    Anyway, enjoy MyDiscord!
                                     </div>
                                 </div>
                                 <div class="form-actions">
@@ -239,8 +239,8 @@ def main():
                         if (document.getElementsByClassName('change-log-button-container').length == 0)
                             return;
                         const parent = document.getElementsByClassName('change-log-button-container')[0];
-                        if (!parent.innerHTML.includes('YourDiscord'))
-                            parent.innerHTML += `<br /><a class="change-log-button" onclick="global.openWelcomeModal()">YourDiscord</a>`;
+                        if (!parent.innerHTML.includes('MyDiscord'))
+                            parent.innerHTML += `<br /><a class="change-log-button" onclick="global.openWelcomeModal()">MyDiscord</a>`;
                     }, 1000);
                     // <div class="change-log-button-container"><a class="change-log-button">Change Log</a></div>
 

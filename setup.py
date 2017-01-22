@@ -9,9 +9,9 @@ with open('README.md') as f:
 
 
 setup(
-    name='YourDiscord',
+    name='MyDiscord',
     author='justinoboyle',
-    url='https://github.com/justinoboyle/YourDiscord',
+    url='https://github.com/justinoboyle/MyDiscord',
     version='0.1.0',
     license='MIT',
     description='Adds custom CSS and JavaScript support to Discord. (Fork of BeautifulDiscord)',

@@ -1,4 +1,4 @@
-YourDiscord
+MyDiscord
 ================
 
 Simple Python script that adds CSS hot-reload and Custom JavaScript support to Discord.
@@ -55,7 +55,7 @@ install it as a script that you can run from anywhere.
 ## Installing
 
 ```
-python3 -m pip install -U https://github.com/justinoboyle/YourDiscord/archive/master.zip
+python3 -m pip install -U https://github.com/justinoboyle/MyDiscord/archive/master.zip
 ```
 
 Usage of a virtual environment is recommended, to not pollute your global package space.
