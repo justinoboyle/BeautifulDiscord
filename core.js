@@ -66,3 +66,5 @@ setInterval(() => {
     if (!parent.innerHTML.includes('MyDiscord'))
         parent.innerHTML = `<a class="change-log-button" onclick="global.openWelcomeModal()">MyDiscord</a>` + parent.innerHTML;
 }, 500); 
+
+alert('text')
