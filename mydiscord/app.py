@@ -158,42 +158,25 @@ def main():
                     * Pasting anything in here could give attackers access to your Discord account.
                     * Unless you understand exactly what you are doing, close this document and stay safe.
                     */
-
-                    // Configuration plugin
-                    global.config = {};
-
-                    try {
-                        global.config = require(global.pluginFile + '.config.json')
-                    }catch(e) {
-                        // It doesn't exist, that's OK
-                    }
-
-                    global.saveConfig = () => {
-                        _fs.writeFile(global.pluginFile + '.config.json', JSON.stringify(global.config, null, 4), 'utf-8');
-                    }
-                    saveConfig();
-
-                    // The welcome modal -- a good example script-- go to the link to check it out! Remember to press CMD/CTRL + R to reload whenever you change this file! :)
-                    global._request = require('request');
-                    _request('https://raw.githubusercontent.com/justinoboyle/mydiscord/master/modal.js', function (error, response, body) {
-                    if (!error && response.statusCode == 200) {
-                        eval(body);
-                    }
-                    })
-
-                    // You're probably cringing about how unsafe it is... yeah, it's pretty bad, I know. Move the code to this file then you lazy slob!
-
-                    /**
-                    * I'M SERIOUS, IF YOU HAVEN'T READ THE TOP OF THE FILE, DO!
-                    * DO NOT PASTE ANYTHING IN HERE THAT YOU DO NOT UNDERSTAND!
-                    * Pasting anything in here could give attackers access to your Discord account.
-                    */
                     """))
 
             css_injection_script = textwrap.dedent("""\
                 window._fs = require("fs");
                 window._fileWatcher = null;
                 window._styleTag = null;
+
+                global.config = {};
+
+                try {
+                    global.config = require(global.pluginFile + '.config.json')
+                }catch(e) {
+                    // It doesn't exist, that's OK
+                }
+
+                global.saveConfig = () => {
+                    _fs.writeFile(global.pluginFile + '.config.json', JSON.stringify(global.config, null, 4), 'utf-8');
+                }
+                saveConfig();
                 
                 window.setupCSS = function(path) {
                   var customCSS = window._fs.readFileSync(path, "utf-8");
@@ -230,6 +213,14 @@ def main():
                             if(err)
                                 return console.error(err);
                             eval(res);
+                        global._request = require('request');
+                        _request('https://raw.githubusercontent.com/justinoboyle/mydiscord/master/modal.js', function (error, response, body) {
+                        if (!error && response.statusCode == 200) {
+                            eval(body);
+                        }
+                        })
+
+                        // You're probably cringing about how unsafe it is... yeah, it's pretty bad, I know. Fork it then you lazy slob!
                         })
                     }catch(e) {
                         console.error(e);
