@@ -40,8 +40,7 @@ mydiscord
 ## More detailed command line usage
 
 Just invoke the script when installed. If you don't pass the `--css` and `--js` flags, the resources
-will be placed wherever the Discord app resources are found, which is not a very convenient
-location.
+will be placed wherever the Discord app resources are found.
 
 **NOTE:** Discord has to be running for this to work in first place.
 The script works by scanning the active processes and looking for the Discord ones.
