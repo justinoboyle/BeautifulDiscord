@@ -24,7 +24,7 @@ global.openWelcomeModal = () => {
             </div>
             <div class="form-actions" style="background: #252525;border:none;">
                 <a href="#" style="text-decoration:none;background:none;" class="btn btn-default" onclick="setTimeout(() => { global.toggleShowsOnBoot(); document.getElementById('boot-modal').style='display:none;' }, 1);">${(global.config.showsOnBoot) ? "Don't show on boot" : "Show on boot"}</a>
-                <a href="#" style="text-decoration:none;" class="btn btn-primary" onclick="setTimeout(() => document.getElementById('boot-modal').style='display:none;', 1);">Gotcha</a>
+                <a href="#" style="text-decoration:none;" class="btn btn-primary" onclick="setTimeout(() => document.getElementById('boot-modal').style='display:none;', 1);">Let's go</a>
             </div>
          </form>
       </div>
