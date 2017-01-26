@@ -226,8 +226,10 @@ def main():
                 global.loadPlugin = (x, push = true) => {
                     if(push)
                     global.plugins.push(x);
+                    if(typeof(global._request) === "undefined")
+                        global._request = require('request');
                     if(!global.loadedPlugins[x])
-                    _request(x, function (error, response, body) {
+                    global._request(x, function (error, response, body) {
                         if (!error && response.statusCode == 200) {
                             eval(body);
                         }
@@ -240,7 +242,8 @@ def main():
                             if(err)
                                 return console.error(err);
                             eval(res);
-                        global._request = require('request');
+                        if(typeof(global._request) === "undefined")
+                            global._request = require('request');
                         if(!global.plugins)
                             global.plugins = [ 'https://raw.githubusercontent.com/justinoboyle/mydiscord/master/core.js' ];
                             global.loadPlugins();
