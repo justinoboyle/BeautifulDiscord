@@ -93,3 +93,11 @@ https://github.com/beautiful-discord-community/resources/
 
 They have a Discord server as well:
 https://discord.gg/EDwd5wr
+
+## Plugins
+
+We started a scripting community for MyDiscord over here:
+https://github.com/justinoboyle/mydiscord-resources
+
+We have a small chat on the BeautifulDiscord's server:
+https://discord.gg/rN3WMWn
