@@ -171,6 +171,8 @@ def main():
                     """))
 
             css_injection_script = textwrap.dedent("""\
+                global.cssFile = '%s';
+                global.pluginFile = '%s'; 
                 window._fs = require("fs");
                 window._fileWatcher = null;
                 window._styleTag = null;
@@ -252,8 +254,6 @@ def main():
                         console.error(e);
                     }
                 }
-                global.cssFile = '%s';
-                global.pluginFile = '%s';
                 window.applyAndWatchCSS(global.cssFile);
                 window.runPluginFile(global.pluginFile)
             """ % (args.css.replace('\\', '\\\\'), args.js.replace('\\', '\\\\')))
