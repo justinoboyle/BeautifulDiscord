@@ -12,18 +12,18 @@ global.openWelcomeModal = () => {
       <div class="modal-inner">
          <form class="form" style="background: #212121;border:none;">
             <div class="form-header" style="background: #252525;border:none;">
-               <header>MyDiscord has been installed.</header>
+               <header>MyDiscord - Announcement</header>
             </div>
             <div class="form-inner" style="background: #212121;border:none;">
                <div class="help-text" style="color: white">
-                MyDiscord has just been installed, congrats!<br /><br />
+                Hi! I'm justin#4752, the developer of MyDiscord. I would really appreciate it if you could let me know either by a GitHub Issue or just a Discord DM if there is anything you'd like to see in a new version of MyDiscord!<br /><br />
+                Psst, there's a <a style="text-decoration:none;color:#697ec4" href="https://github.com/justinoboyle/mydiscord/tree/rewrite">rewrite effort</a> going on... a full npm plugin system sound nice? :)<br /><br />
                 You can <a style="text-decoration:none;color:#697ec4" href="#" onclick="global.openTextFile(global.cssFile)">edit your styles</a> (which hot-reload, awesome!), <br /><br />
                 Or <a style="text-decoration:none;color:#697ec4" href="#" onclick="global.openTextFile(global.pluginFile)">edit your scripts</a> (<strong>Do not enter code that you don't understand... seriously!</strong>) <br /><br />
-                Anyway, enjoy MyDiscord!
                 </div>
             </div>
             <div class="form-actions" style="background: #252525;border:none;">
-                <a href="#" style="text-decoration:none;background:none;" class="btn btn-default" onclick="setTimeout(() => { global.toggleShowsOnBoot(); document.getElementById('boot-modal').style='display:none;' }, 1);">${(global.config.showsOnBoot) ? "Don't show on boot" : "Show on boot"}</a>
+                <a href="#" style="text-decoration:none;background:none;" class="btn btn-default" onclick="setTimeout(() => { global.toggleShowsOnBoot(); document.getElementById('boot-modal').style='display:none;' }, 1);">${(global.config.showsOnBootv2) ? "Don't show on boot" : "Show on boot"}</a>
                 <a href="#" style="text-decoration:none;" class="btn btn-primary" onclick="setTimeout(() => document.getElementById('boot-modal').style='display:none;', 1);">Let's go</a>
             </div>
          </form>
@@ -32,15 +32,15 @@ global.openWelcomeModal = () => {
 `;
     document.getElementById('boot-modal').style = '';
 }
-if (typeof (global.config.showsOnBoot) === "undefined") {
-    global.config.showsOnBoot = true;
+if (typeof (global.config.showsOnBootv2) === "undefined") {
+    global.config.showsOnBootv2 = true;
     saveConfig();
 }
 global.toggleShowsOnBoot = () => {
-    global.config.showsOnBoot = !global.config.showsOnBoot;
+    global.config.showsOnBootv2 = !global.config.showsOnBootv2;
     saveConfig();
 }
-if (global.config.showsOnBoot === true)
+if (global.config.showsOnBootv2 === true)
     global.openWelcomeModal();
 
 global.getFileOpener = () => {
