@@ -1,4 +1,4 @@
-global.modal = document.createElement('div');
+/*global.modal = document.createElement('div');
 global.modal.id = 'boot-modal';
 
 global._fs = require('fs');
@@ -66,3 +66,4 @@ setInterval(() => {
     if (!parent.innerHTML.includes('MyDiscord'))
         document.getElementsByClassName('ui-tab-bar-separator')[3].insertAdjacentHTML('beforebegin',`<div class="ui-tab-bar-item" onclick="global.openWelcomeModal()">MyDiscord</div>`);
 }, 100);
+*/
