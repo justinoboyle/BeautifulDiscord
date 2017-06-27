@@ -51,7 +51,7 @@ Open Discord > Click Settings > MyDiscord > Install Plugin > Type the plugin ide
 
 Identifiers can take multiple different forms, but for developers, it's simply the same syntax as if a `npm install --save` was prepended.
 
-If you want to load a plugin in development, any plugins inside the `[mydiscord root]/plugins/dev_modules/` folder will be automagically loaded. Remember to install dependencies yourself. You also probably want to turn on dev mode, which means the package will be rebuilt on every reload. This is really slow, though. (add a `"devMode": true"` to the package.json inside `[mydiscord root]/plugins/`)
+If you want to load a plugin in development, any plugins inside the `[mydiscord root]/plugins/dev_modules/` folder will be automagically loaded. Remember to install dependencies yourself. You also probably want to turn on dev mode, which means the package will be rebuilt on every reload. This is really slow, though. (`mydiscord --dev-mode true`)
 
 ### Updating from legacy
 
@@ -60,6 +60,10 @@ Installing the latest myDiscord *should* automatically update you to the lastest
 ```
 python3 -m pip uninstall mydiscord
 ```
+
+### Developing plugins
+
+Check out the [documentation here](docs/developing/DEVELOPING.md)!
 
 ### Contributions
 
