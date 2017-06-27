@@ -37,10 +37,44 @@ mydiscord --install ~/.some-other-folder/
 
 Easy, huh?
 
+### How do I install custom CSS styles?
+
+This is really easy. Open up the `[mydiscord root]/styles.css` file and add away! Enjoy hot reloading :)
+
+If, for some strange reason, you want to remove this functionality, remove the `mydiscord-plugin-csshot` plugin.
+
+### How do I install plugins?
+
+This is really easy if you're using `mydiscord-plugin-gui` (the default!)
+
+Open Discord > Click Settings > MyDiscord > Install Plugin > Type the plugin identifier
+
+Identifiers can take multiple different forms, but for developers, it's simply the same syntax as if a `npm install --save` was prepended.
+
+If you want to load a plugin in development, any plugins inside the `[mydiscord root]/plugins/dev_modules/` folder will be automagically loaded. Remember to install dependencies yourself. You also probably want to turn on dev mode, which means the package will be rebuilt on every reload. This is really slow, though. (add a `"devMode": true"` to the package.json inside `[mydiscord root]/plugins/`)
+
 ### Updating from legacy
 
-Installing the latest MyDiscord *should* automatically update you to the lastest version, but you may want to manually uninstall the old version of MyDiscord:
+Installing the latest myDiscord *should* automatically update you to the lastest version, but you may want to manually uninstall the old version of MyDiscord:
 
 ```
 python3 -m pip uninstall mydiscord
 ```
+
+### Contributions
+
+So you want to contribute! Awesome!
+
+#### Rules for contributions
+
+* Use your head and be kind
+
+#### How to contribute
+
+So, myDiscord is split up into a bunch of different codebases.
+
+| Repository                                                             | Purpose                                                                                                                                                        |
+|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [mydiscord](https://github.com/justinoboyle/mydiscord)                 | Handles most of the user-facing documentation and injects [`mydiscord-inject`](https://github.com/justinoboyle/mydiscord-inject) into the application.         |
+| [mydiscord-inject](https://github.com/justinoboyle/mydiscord-inject)   | The payload injected into the user-facing application.                                                                                                         |
+| [mydiscord-manager](https://github.com/justinoboyle/mydiscord-manager) | The repository cloned into the root repository following installation. The user's plugins are built here and the injected payload searches for the build here. |
