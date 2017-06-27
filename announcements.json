@@ -3,7 +3,7 @@
     "main": "Welcome to MyDiscord!",
     "subtext": "Feel free to <a href=\"https://github.com/justinoboyle/mydiscord\">check the GitHub page</a> if you have any questions!</a>"
   },
-  "announcement0" {
+  "announcement0": {
     "main": "This is a test announcement"
   }
 }
