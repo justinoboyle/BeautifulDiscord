@@ -1,0 +1,164 @@
+/* Toast */
+.toast {
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 100;
+    bottom: 0px;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    webkit-transition: all 150ms ease-in ease-out;
+    transition: all 150ms ease-in ease-out;
+    opacity: 100%;
+}
+.toast-dying {
+    opacity: 0%;
+    bottom: -43px;
+    webkit-transition: all 150ms ease-in ease-out;
+    transition: all 150ms ease-in ease-out;
+}
+.toast-main {
+    font-size: 20px;
+    font-weight: 600;
+}
+.toast-subtext:before {
+    font-size: 20px;
+    font-weight: 200;
+    content: " | "
+}
+.toast-subtext {
+    font-size: 18px;
+    font-weight: 300;
+}
+.toast-content {
+    padding-right: 40px;
+}
+.toast-closeButton {
+    right: 30px;
+    position: absolute;
+    bottom: 25%;
+}
+#app-mount {
+    z-index: 1;
+}
+/* END Toast */
+/* GUI - Just a copy of Discord styles without random names */
+.flex{
+    display: flex;
+}
+
+.settings-title{
+    color: #f6f6f7;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.settings-heading{
+    color: #b9bbbe;
+    margin-bottom: 8px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+.settings-container{
+    margin-bottom: 20px;
+}
+
+.settings-label{
+    color: #f6f6f7;
+    margin-left: 0;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 16px;
+    flex: 1 1 auto;
+}
+
+.settings-desc{
+    color: #72767d;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.settings-checkbox-wrap{
+    margin-right: 0;
+    margin-left: 10px;
+    user-select: none;
+    position: relative;
+    width: 44px;
+    height: 24px;
+    display: block;
+}
+.settings-checkbox{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.settings-checkbox-switch{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #72767d;
+    border-radius: 14px;
+    transition: background .15s ease-in-out,box-shadow .15s ease-in-out,border .15s ease-in-out;
+}
+.settings-checkbox-switch.settings-checkbox-checked{
+    background: #7289da;
+}
+.settings-checkbox-switch:before{
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    bottom: 3px;
+    background: #f6f6f7;
+    border-radius: 10px;
+    transition: all .15s ease;
+    box-shadow: 0 3px 1px 0 rgba(0,0,0,.05), 0 2px 2px 0 rgba(0,0,0,.1), 0 3px 3px 0 rgba(0,0,0,.05);
+}
+.settings-checkbox-switch.settings-checkbox-checked:before{
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+.settings-divider{
+    background-color: hsla(218,5%,47%,.3);
+    width: 100%;
+    height: 1px;
+    margin-top: 20px;
+}
+
+.settings-logo-github{
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAACDUlEQVRIiZ3UT4hOYRTH8c9co6mJWSj/JSZZWA0h2xMzG2Eto1B2LBRWklI2mvxbmkJYkpoY+fPepiwmMkaSQpL9pKQQyuLet+48817z57d53+f3nPO9nec852lrNBpqtAB96MU2rEY7/uALRvEYjyLieytAWw18P45hY92XK3qFCxFxczr4PFzFwRlAU13D4Yj42zSyymYnhucIVuYN53ne2Qo+qDhfeIe3M4S+LeOV+YPNjeax7MOtSsIuPMVOnFA08T2+oQvrFc09j/vYjqFKfn9E3G5rNBoLMY7uyuYmRaOmVUTI83wjxir2J/RkZSndSc6KmYD/E9+N3kxRelXjijs8G42aWunODFsS8yImZkOOiAlcSuwtGVYl5ofZgCv6mKxXZehIzPY5wtO8jgw/EnPpHOFLkvWPDJ8Tc/cc4Wne58zUm9GPPbOh5nm+B3sTezQzebJelr/3cMT0931lnudHcUfx6FU1lGEEb5qGYqh+4Yrizt8zdcjW4S5e4HIL8BhGMvzEydI8U653KBq9GD34miRPYCuW11R0KiJ+Nl/Fhxgo/9/EM6xVnP3mFvCvZcWtNBARw0x+co/jBtYontFNioHqqoGkRwHXIuJ4c5ElmwdwFhvwAK9xrgZezf2NsxFxqC6gqdMIPMF8LKuBNysaQl9EnE4D6kZ9BIsUU/e8Jua1oqHX1Zz/P4cAfD/4X0dQAAAAAElFTkSuQmCC") no-repeat;
+    background-size: 19px 19px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.settings-logo-discord{
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHonAACAgwAA+mQAAIDSAAB2hgAA7OkAADmeAAAV/sZ+0zoAAAJISURBVHjanJQ/aBVBEMYnReIfAoqgxiIIgoiFhQGxCIitiDYaRLEQsRSJiLWFwvHAxChipSLayO+L2KTSQgvFSLSweir6iF1QsUwwDxmLt3e3u/caZbnlbm++mW9mZz5zwzCOscBXfaStttrx3nujfvtCmxsMYW7mhnFcLsdxhQeXq+9XOHumPT3wBK/kSgxiw/pP6QqXq+VmbrqoDolByiN2FTm7H8B0aBhQrX4uKcFM0mkSzk9ieAJWpwH5o9Xqu8tqykguJ41cEe/qhR4wzxIfeMciHd3WLX3K+IScJ+uCybXEUe1nnB0MYDJMmxhjjK2ajhNIIld3PIExRK91emDDGGQtpjcR8TJyWTBc3xmogQq7wgmnonrXtKtM7kSmARidrNNydlW9nAPtg8F0hDNsDtBDOlC642XVeXFkOa4V1oeY83LmZTKdlcs5HHhczgpWguW8Df6H9VuurjbINIPLaYUKHMnakxr8pKJ3Xc40hrEP10+NhhR2ZrSjDrsrwxhlG1HZQt13aaNMa7SSXVUZWXMyjGEKziUV36IpTmMydmcdFtF2PQxxLsh5r0ea0ax+6JtGMJn26lc+kulgLKmlcd1LRKCrEzrJXCwN/SL30Y9kiut/eW8rlplkSBMNSWhf0mIuQ7l5U8tK8Hl9TvWJZFU9tUxznjmop6la0hQdlzPF44YAYmzXclNqlSmXFmS8zmjT66prTFGooFChQgUFYQ+rxU0NYnoe+ETgrBlV6UhDU4zZuLf/FWxMy8X/gk1XdcXt7wAHaJTG0tD/pgAAAABJRU5ErkJggg==") no-repeat;
+    background-size: 19px 19px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+/* END GUI */
