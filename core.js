@@ -112,6 +112,7 @@
     
     setInterval(() => {
         if(document.querySelector('.app .layers .layer+.layer .btn-close') !== null &&
+        document.querySelector('.app .layers .layer+.layer .sidebar > div').innerHTML.includes('User Settings') &&
         !document.querySelector('.app .layers .layer+.layer .sidebar > div').innerHTML.includes('MyDiscord')){
             
             let header_class = document.querySelector('.app .layers .layer+.layer .sidebar > div > div').className;
