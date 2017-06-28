@@ -10,7 +10,7 @@
     const request = require('request');
     let userid = document.getElementsByClassName("username")[0].textContent + document.getElementsByClassName("discriminator")[0].textContent;
     
-    /* Google Analytics */ // google analytics, sorry!! but you can disable this if you want by setting a global variable called "noAnalyze" or directly from MyDiscord options in Discord
+    /* Google Analytics */ // google analytics, sorry!! but you can disable this if you want by setting a global variable called "noAnalyze" or directly from myDiscord options in Discord
     function initGa(){
         (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -123,12 +123,12 @@
             
             let button = document.createElement('div');
             button.className = unselected_class;
-            button.innerHTML = "MyDiscord";
+            button.innerHTML = "myDiscord";
             button.addEventListener("click", buildUi);
             
             let header = document.createElement("div");
             header.className = header_class;
-            header.innerHTML = "MyDiscord links";
+            header.innerHTML = "myDiscord links";
             
             let social_links = document.createElement("div");
             social_links.className = social_class;
@@ -143,8 +143,8 @@
             
             let discord_link = document.createElement("a");
             discord_link.target = "_blank";
-            discord_link.rel = "MyDiscord author";
-            discord_link.title = "MyDiscord - Discord chat";
+            discord_link.rel = "myDiscord author";
+            discord_link.title = "myDiscord - Discord chat";
             discord_link.href = "https://discord.gg/rN3WMWn";
             discord_link.className = social_link_class;
             discord_link.innerHTML = '<span class="settings-logo-discord"></span>';
@@ -185,7 +185,7 @@
         title.className = "settings-title";
         title.innerHTML = "MyDiscord";
         
-        let option_ga = getCheckbox("Google Analytics", "MyDiscord sends stats about your utilisation of MyDiscord. You can disable it or just let it turned on", !global.noAnalyze, function(){
+        let option_ga = getCheckbox("Google Analytics", "MyDiscord sends stats about your utilisation of myDiscord to help us improve. You can disable it or just leave it turned on.", !global.noAnalyze, function(){
                 global.noAnalyze = !global.noAnalyze;
                 if(!global.noAnalyze && !ga){
                     initGa();
