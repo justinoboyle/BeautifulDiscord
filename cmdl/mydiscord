@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+global.commandLine = true;
+require('./_entry.js');

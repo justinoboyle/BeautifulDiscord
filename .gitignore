@@ -1,4 +1,9 @@
 
+### Project-specific ###
+build/
+build
+temp/
+temp
 # Created by https://www.gitignore.io/api/visualstudiocode,linux,macos,windows,node
 
 ### Linux ###

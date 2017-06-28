@@ -1,0 +1,7 @@
+#!/usr/bin/env babel-node
+
+global.commandLine = true;
+process.env['ALLOWSRC'] = 'true';
+process.env['RUNDEV'] = 'true';
+
+require('./_entry.js');
