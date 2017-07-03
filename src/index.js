@@ -1,3 +1,4 @@
+global.platform = process.platform;
 import getExecutable from './util/getExecutable';
 import processElevator from './util/processElevator';
 import commander from 'commander';
@@ -17,13 +18,13 @@ commander
     .option('--discordexec [path]', 'Change discord executable')
     .option('--discordpid [pid]', 'Change discord executable pid')
     .parse(process.argv);
- 
+
 let
     installLocation = commander.install || path.join(os.homedir(), '/.mydiscord/'),
     injectRemote = _config.injectRemote;
 
 async function _do() {
-    
+
     let executable = await getExecutable(commander);
     let elevated = await isElevated();
 
@@ -36,10 +37,10 @@ async function _do() {
     let _continue = true;
 
     try {
-        
+
         await fs.mkdir(extractedPath);
         asar.extractAll(executable.path, extractedPath);
-        await fs.rename(executable.path, executable.path + ".bak"); 
+        await fs.rename(executable.path, executable.path + ".bak");
 
     }catch(e) {
         if(!elevated) {
@@ -52,7 +53,7 @@ async function _do() {
 
     if(!_continue) return;
 
-    let 
+    let
         _indexSrc = (await fs.readFile(path.join(extractedPath, './index.js'))).toString(),
         payloads = await payload.getPayloads(),
         identification = await payload.identify(_indexSrc),
