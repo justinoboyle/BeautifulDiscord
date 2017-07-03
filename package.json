@@ -41,7 +41,7 @@
         "git": "^0.1.5",
         "inquirer": "^3.1.1",
         "is-elevated": "^2.0.1",
-        "mydiscord-inject": "^1.0.10",
+        "mydiscord-inject": "^1.0.12",
         "postinstall-build": "^5.0.0",
         "ps-node": "^0.1.6",
         "sudo": "^1.0.3",

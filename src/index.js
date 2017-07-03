@@ -14,14 +14,15 @@ import payload from 'mydiscord-inject';
 
 commander
     .version(_package.version)
-    .option('--install [path]', 'Change install location.')
+    .option('--path [path]', 'Change install location.')
     .option('--discordexec [path]', 'Change discord executable')
     .option('--discordpid [pid]', 'Change discord executable pid')
     .parse(process.argv);
 
 let
-    installLocation = commander.install || path.join(os.homedir(), '/.mydiscord/'),
+    installLocation = commander.path || path.join(os.homedir(), '/.mydiscord/'),
     injectRemote = _config.injectRemote;
+    
 
 async function _do() {
 
@@ -45,7 +46,7 @@ async function _do() {
     }catch(e) {
         if(!elevated) {
             console.log("Process not elevated, retrying with elevation...");
-            await processElevator(executable);
+            await processElevator(executable, installLocation);
             _continue = false;
             return;
         } else console.error(e);
@@ -54,13 +55,17 @@ async function _do() {
     if(!_continue) return;
 
     let
+        _configPath = path.join(extractedPath, './config-mydiscord.json'),
         _indexSrc = (await fs.readFile(path.join(extractedPath, './index.js'))).toString(),
         payloads = await payload.getPayloads(),
         identification = await payload.identify(_indexSrc),
-        thePayload = await payload.createPayload({
+        config = {
             userScriptRoot: installLocation,
             rootDir: installLocation
-        })
+        },
+        thePayload = await payload.createPayload(config);
+
+    await fs.writeFile(_configPath, JSON.stringify(config));
 
     console.log("Identified as " + identification);
     console.log("Injecting...");

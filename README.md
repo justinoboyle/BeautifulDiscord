@@ -32,7 +32,7 @@ Want to do something else? No problem. Just pass a command line argument like so
 
 ```
 npm install --global mydiscord
-mydiscord --install ~/.some-other-folder/
+mydiscord --path ~/.some-other-folder/
 ```
 
 Easy, huh?
