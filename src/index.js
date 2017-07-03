@@ -11,10 +11,12 @@ import asar from 'asar';
 import isElevated from 'is-elevated';
 import sudo from 'sudo';
 import payload from 'mydiscord-inject';
+import rimraf from 'rimraf';
 
 commander
     .version(_package.version)
     .option('--path [path]', 'Change install location.')
+    .option('--revert', 'Uninstall myDiscord')
     .option('--discordexec [path]', 'Change discord executable')
     .option('--discordpid [pid]', 'Change discord executable pid')
     .parse(process.argv);
@@ -22,7 +24,7 @@ commander
 let
     installLocation = commander.path || path.join(os.homedir(), '/.mydiscord/'),
     injectRemote = _config.injectRemote;
-    
+
 
 async function _do() {
 
@@ -33,7 +35,7 @@ async function _do() {
     console.log("Extracting app.asar...");
 
     let extractedPath = executable.path;
-    if(executable.path.endsWith('.asar')) extractedPath = extractedPath.slice(0, -1 * '.asar'.length)
+    if (executable.path.endsWith('.asar')) extractedPath = extractedPath.slice(0, -1 * '.asar'.length)
 
     let _continue = true;
 
@@ -43,8 +45,8 @@ async function _do() {
         asar.extractAll(executable.path, extractedPath);
         await fs.rename(executable.path, executable.path + ".bak");
 
-    }catch(e) {
-        if(!elevated) {
+    } catch (e) {
+        if (!elevated) {
             console.log("Process not elevated, retrying with elevation...");
             await processElevator(executable, installLocation);
             _continue = false;
@@ -52,7 +54,7 @@ async function _do() {
         } else console.error(e);
     }
 
-    if(!_continue) return;
+    if (!_continue) return;
 
     let
         _configPath = path.join(extractedPath, './config-mydiscord.json'),
@@ -77,4 +79,33 @@ async function _do() {
     console.log("Feel free to relaunch Discord at your earliest convenience :)");
 }
 
-_do();
+async function _doUninstall() {
+
+    let executable = await getExecutable(commander);
+    let elevated = await isElevated();
+
+    console.log("Using Discord instance", executable);
+
+    let extractedPath = executable.path;
+    if (executable.path.endsWith('.asar'))
+        return console.log("Already done. No changes made.");
+
+    try {
+
+        rimraf.sync(executable.path);
+        await fs.rename(executable.path + ".asar.bak", executable.path + ".asar");
+        console.log("All done! Enjoy stock!");
+
+    } catch (e) {
+        if (!elevated) {
+            console.log("Process not elevated, retrying with elevation...");
+            await processElevator(executable, installLocation);
+            return;
+        } else console.error(e);
+    }
+}
+
+if (!commander.revert)
+    _do();
+else
+    _doUninstall();

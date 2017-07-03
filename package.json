@@ -44,6 +44,7 @@
         "mydiscord-inject": "^1.0.12",
         "postinstall-build": "^5.0.0",
         "ps-node": "^0.1.6",
+        "rimraf": "^2.6.1",
         "sudo": "^1.0.3",
         "sudo-prompt": "^7.1.0"
     }
