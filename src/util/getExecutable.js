@@ -20,9 +20,9 @@ export default async function(commander) {
             type: "rawlist",
             name: "_pickedLocation",
             message: "Pick the Discord instance you wish to use.",
-            choices: runningExecutables
+            choices: runningExecutables.map(JSON.stringify)
         }]);
-        executable = _pickedLocation;
+        executable = JSON.parse(_pickedLocation);
     }
     return executable;
 }
