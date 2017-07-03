@@ -1,3 +1,9 @@
+/* Globals */
+.flex{
+    display: flex;
+}
+/* END Globals */
+
 /* Toast */
 .toast {
     width: 100%;
@@ -42,11 +48,8 @@
     z-index: 1;
 }
 /* END Toast */
-/* GUI - Just a copy of Discord styles without random names */
-.flex{
-    display: flex;
-}
 
+/* Settings */
 .settings-title{
     color: #f6f6f7;
     text-transform: uppercase;
@@ -82,6 +85,10 @@
     flex: 1 1 auto;
 }
 
+.settings-input-field .settings-label{
+    margin-bottom: 5px;
+}
+
 .settings-desc{
     color: #72767d;
     font-size: 14px;
@@ -99,6 +106,8 @@
     height: 24px;
     display: block;
 }
+
+/* Checkboxes */
 .settings-checkbox{
     position: absolute;
     opacity: 0;
@@ -138,12 +147,33 @@
     -webkit-transform: translateX(20px);
     transform: translateX(20px);
 }
+/* Inputs */
+.settings-input{
+    color: #f6f6f7;
+    background-color: rgba(0,0,0,.1);
+    border-color: rgba(0,0,0,.3);
+    padding: 10px;
+    height: 40px;
+    box-sizing: border-box;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    outline: none;
+    transition: background-color .15s ease,border .15s ease;
+    font-size: 16px;
+}
+
 
 .settings-divider{
     background-color: hsla(218,5%,47%,.3);
     width: 100%;
     height: 1px;
     margin-top: 20px;
+}
+
+.settings-social-mydiscord a{
+    margin-right: 6px;
 }
 
 .settings-logo-github{
@@ -161,4 +191,145 @@
     height: 20px;
     display: inline-block;
 }
+
+/* Modal */
+.mydiscord-modal{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    z-index: 1000;
+    box-sizing: border-box;
+    min-height: 340px;
+    animation: modalShow .1s;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    pointer-events: auto;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.mydiscord-modal-hide{
+    animation: modalHide .1s;
+}
+
+.mydiscord-modal-inner{
+    flex-direction: column;
+    display: flex;
+    background-color: #2f3136;
+    box-shadow: 0 0 0 1px rgba(32,34,37,.6), 0 2px 10px 0 rgba(0,0,0,.2);
+    width: 440px;
+    max-height: 660px;
+    min-height: 200px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.mydiscord-modal-header{
+    transition: box-shadow .1s ease-out;
+    word-wrap: break-word;
+    position: relative;
+    flex: 0 0 auto;
+    padding: 20px;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.mydiscord-modal-header h4{
+    color: #f6f6f7;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.mydiscord-modal-scrollerWrap::-webkit-scrollbar,
+.mydiscord-modal-scroller::-webkit-scrollbar{
+    display: none;
+}
+
+.mydiscord-modal-scrollerWrap{
+    position: relative;
+    min-height: 1px;
+    height: 100%;
+    display: flex;
+    flex: 1;
+}
+
+.mydiscord-modal-scroller{
+    padding: 0 12px 0 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 1px;
+    flex: 1;
+    color: #f6f6f7;
+    font-weight: 400;
+    line-height: 24px;
+    font-size 16px;
+    margin-bottom: 20px;
+}
+
+.mydiscord-modal-footer{
+    background-color: rgba(32,34,37,.3);
+    box-shadow: inset 0 1px 0 rgba(32,34,37,.6);
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    flex: 0 0 auto;
+    padding: 20px;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.mydiscord-modal-button-done{
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #fff;
+    background-color: #7289da;
+    transition: background-color .17s ease;
+    cursor: pointer;
+    min-width: 96px;
+    min-height: 38px;
+}
+
+.mydiscord-modal-button-done:hover{
+    background-color: #677bc4;
+}
+
+.mydiscord-modal-button-inner{
+    display: inline;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 /* END GUI */
+
+/* Keyframes */
+@keyframes modalShow{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes modalHide{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
