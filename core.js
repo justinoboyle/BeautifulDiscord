@@ -215,7 +215,7 @@
                 section.className = "section";
                 
                 let account_wrap = document.createElement("div");
-                div.className = "connected-accounts";
+                account_wrap.className = "connected-accounts";
                 
                 section.appendChild(account_wrap);
                 document.querySelector("#user-profile-modal .guilds").appendChild(section);
