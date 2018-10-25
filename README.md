@@ -1,6 +1,8 @@
 MyDiscord
 ================
 
+**This project isn't maintained, and hasn't been in a while. If you want, you can submit a PR and I'll review it, but I'm not making any changes myself.**
+
 Simple Python script that adds CSS hot-reload and Custom JavaScript support to Discord.
 
 psst: there's a [rewrite effort](https://github.com/justinoboyle/mydiscord/tree/rewrite) going on over here.
